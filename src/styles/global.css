@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: theme("colors.base.3");
+    --bg-accent: theme("colors.base.2");
+
+    --text-primary: theme("colors.base.00");
+    --text-secondary: theme("colors.base.1");
+    --text-accent: theme("colors.base.01");
+
+    font-family: Inter, sans-serif;
+    font-feature-settings:
+      "liga" 1,
+      "calt" 1;
+
+    @apply bg-base-3 text-base text-base-00 md:text-lg dark:bg-base-03 dark:text-base-0;
+  }
+
+  ::selection {
+    @apply bg-base-02 text-base-1 dark:bg-base-2 dark:text-base-01;
+  }
+
+  .dark {
+    --bg-primary: theme("colors.base.03");
+    --bg-accent: theme("colors.base.02");
+
+    --text-primary: theme("colors.base.0");
+    --text-secondary: theme("colors.base.01");
+    --text-accent: theme("colors.base.1");
+  }
+
+  :focus-visible {
+    @apply outline-none ring ring-blue;
+  }
+
+  @supports (font-variation-settings: normal) {
+    :root {
+      font-family: InterVariable, sans-serif;
+    }
+  }
+}
+
+@layer components {
+  .h1,
+  .h2,
+  .h3 {
+    @apply scroll-m-20 tracking-tight;
+  }
+
+  .h1 {
+    @apply text-4xl font-extrabold lg:text-5xl;
+  }
+
+  .h2 {
+    @apply border-b pb-2 text-3xl font-semibold first:mt-0;
+  }
+
+  .h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  .p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  .list {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+}
+
+@layer utilities {
+  .box-shadow {
+    box-shadow:
+      inset 3px 3px 12px 6px theme("colors.current"),
+      inset -3px -3px 12px 6px theme("colors.current");
+  }
+}
