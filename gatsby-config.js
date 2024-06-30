@@ -3,17 +3,23 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Матвеев Юрий : фронтенд-разработчик`,
+    title: "Матвеев Юрий : фронтенд-разработчик",
   },
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
-    `gatsby-plugin-mdx`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/favicon.png",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
         path: `${__dirname}/src/`,
       },
     },

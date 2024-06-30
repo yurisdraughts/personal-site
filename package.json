@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "personal-site",
   "version": "1.0.0",
   "private": true,
   "description": "",
@@ -19,9 +19,11 @@
     "clsx": "^2.1.1",
     "gatsby": "^5.13.5",
     "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1"
