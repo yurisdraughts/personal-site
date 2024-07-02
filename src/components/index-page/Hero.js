@@ -1,11 +1,14 @@
 import * as React from "react";
-import Container from "../Container";
+import Container from "../layout/Container";
 import Decoration from "./Decoration";
-import Gradient from "../Gradient";
+import Gradient from "../text/Gradient";
 
 const Hero = () => {
   return (
-    <section className="relative h-[calc(100dvh-theme(spacing.lg))]">
+    <section
+      className="relative grid min-h-[calc(100dvh-theme(spacing.lg))] pt-sm
+        md:pt-0"
+    >
       <Container
         className="flex h-full flex-col items-center justify-end md:flex-row
           md:justify-start"

@@ -4,10 +4,11 @@ import * as runtime from "react/jsx-runtime";
 import { compileSync, runSync } from "@mdx-js/mdx";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout/Layout";
-import Container from "../components/Container";
-import Highlight from "../components/Highlight";
-import Gradient from "../components/Gradient";
-import { ExternalLink } from "../components/Link";
+import Container from "../components/layout/Container";
+import Highlight from "../components/text/Highlight";
+import Gradient from "../components/text/Gradient";
+import ExternalLink from "../components/links/ExternalLink";
+import Seo from "../components/Seo";
 
 const components = {
   strong: Highlight,
@@ -60,7 +61,7 @@ const PortfolioPage = ({ data }) => {
 export default PortfolioPage;
 
 export const pageQuery = graphql`
-  query PortfolioProjects {
+  query PortfolioProjectsQuery {
     allMdx(
       filter: {
         internal: {
@@ -85,4 +86,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export const Head = () => <title>Portfolio Page</title>;
+export const Head = () => <Seo title="Портфолио" />;

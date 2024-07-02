@@ -1,8 +1,7 @@
 import * as React from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
-import PolymorphicComponent from "../PolymorphicComponent";
-
-const isBrowser = typeof window !== "undefined";
+import PolymorphicComponent from "../../PolymorphicComponent";
+import isBrowser from "../../../utils/isBrowser";
 
 const Toggle = () => {
   const [theme, setTheme] = React.useState(
@@ -41,7 +40,7 @@ const Toggle = () => {
   return (
     <button
       type="button"
-      className={`group/rotate-icon transition-color my-auto grid h-10 w-16
+      className={`group/rotate-icon transition-colors my-auto grid h-10 w-16
         place-items-center rounded-md bg-base-3 duration-300 hover:bg-base-03
         hover:text-base-1 focus-visible:bg-base-03 focus-visible:text-base-1
         dark:bg-base-03 hover:dark:bg-base-3 hover:dark:text-base-01

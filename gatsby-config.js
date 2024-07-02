@@ -4,6 +4,10 @@
 module.exports = {
   siteMetadata: {
     title: "Матвеев Юрий : фронтенд-разработчик",
+    menuLinks: [
+      { name: "Главная", link: "/" },
+      { name: "Портфолио", link: "/portfolio" },
+    ],
   },
   plugins: [
     "gatsby-plugin-postcss",
