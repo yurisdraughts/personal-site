@@ -20,9 +20,8 @@ const NotFoundPage = () => {
               navigate(-1);
             }}
             className="grid h-10 w-fit cursor-pointer place-items-center
-              rounded-md bg-[--bg-accent] px-3 text-[--text-primary]
-              transition-colors transition-transform duration-200
-              hover:text-[--text-accent] hover:-translate-y-px
+              rounded-md bg-[--bg-accent] px-3 text-[--text-primary] transition
+              duration-200 hover:text-[--text-accent] hover:-translate-y-px
               focus:text-[--text-accent] focus:-translate-y-px"
           >
             <span className="font-medium">

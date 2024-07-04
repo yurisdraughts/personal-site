@@ -5,6 +5,7 @@ import Gradient from "../text/Gradient";
 import Highlight from "../text/Highlight";
 import IconGradient, { EnableGradientIcons } from "../text/IconGradient";
 import Link from "../links/Link";
+import ExternalLink from "../links/ExternalLink";
 import AboutMe from "../../content/about-me.mdx";
 
 const About = () => {
@@ -12,10 +13,9 @@ const About = () => {
     <section className="group/about flow-root">
       <Container
         className={`relative mb-lg grid justify-items-center gap-sm rounded-3xl
-          md:border md:border-[--bg-primary] bg-[--bg-accent] pb-sm
-          text-[--text-primary] *:w-10/12 *:bg-[--bg-primary] *:p-sm
-          md:grid-cols-2 md:rounded-t-4xl md:pr-sm md:pt-sm md:*:w-full
-          lg:grid-cols-[11fr_15fr]`}
+          bg-[--bg-accent] pb-sm text-[--text-primary] *:w-10/12
+          *:bg-[--bg-primary] *:p-sm md:grid-cols-[13fr_15fr] md:rounded-t-4xl
+          md:border md:border-[--bg-primary] md:pr-sm md:pt-sm md:*:w-full`}
       >
         <div
           className="grid items-start justify-center rounded-b-4xl
@@ -26,7 +26,7 @@ const About = () => {
             alt="Моя фотография на фоне леса"
             width={430}
             height={430}
-            className="rounded-4xl md:sticky
+            className="rounded-2xl sm:rounded-3xl md:sticky
               md:top-[calc(theme(spacing.lg)+theme(spacing.sm))]"
           />
         </div>
@@ -55,6 +55,7 @@ const About = () => {
                   <Highlight {...props} />
                 </span>
               ),
+              link: ExternalLink,
             },
             wrapper: ({ components, ...rest }) => (
               <div className="rounded-4xl">

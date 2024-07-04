@@ -6,8 +6,8 @@ const Highlight = ({ className, ...props }) => {
     <span
       className={clsx(
         className,
-        `rounded bg-[--bg-accent] px-[0.3rem] py-[0.2rem] text-sm font-semibold
-        text-[--text-primary]`,
+        `rounded bg-[--bg-accent] box-decoration-clone px-[0.3rem] py-[0.2rem]
+        text-sm font-semibold text-[--text-primary]`,
       )}
       {...props}
     />
