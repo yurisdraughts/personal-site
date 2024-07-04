@@ -10,8 +10,8 @@ const Hero = () => {
         md:pt-0"
     >
       <Container
-        className="flex h-full flex-col items-center justify-end md:flex-row
-          md:justify-start"
+        className="flex h-full flex-col items-center justify-end
+          md:flex-row md:justify-start"
       >
         <hgroup className={"z-10 mb-16 text-start *:my-2 md:mb-0"}>
           <p className="h3">Здравствуйте! Меня зовут</p>

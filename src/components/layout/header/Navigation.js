@@ -1,9 +1,11 @@
 import * as React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import { Dialog, DialogPanel, DialogBackdrop } from "@headlessui/react";
 import Container from "../Container";
 import isBrowser from "../../../utils/isBrowser";
+import LocationContext from "../../../utils/LocationContext";
+import NavigationLinkListItem from "./NavigationLinkListItem";
 
 const Navigation = () => {
   const {
@@ -67,18 +69,22 @@ const Navigation = () => {
             </div>
             <ul className="grid justify-start">
               {menuLinks.map((menuLink, i) => (
-                <li key={i}>
-                  <Link
-                    to={`${menuLink.link}`}
-                    className="grid h-lg justify-start rounded-sm px-1
-                      font-semibold transition-colors hover:text-[--text-accent]
-                      focus:text-[--text-accent]"
-                    onClick={close}
-                  >
-                    <span className="place-self-center">{menuLink.name}</span>
-                  </Link>
-                </li>
+                <NavigationLinkListItem
+                  key={i}
+                  to={menuLink.link}
+                  className="justify-start px-1"
+                  onClick={close}
+                >
+                  {menuLink.name}
+                </NavigationLinkListItem>
               ))}
+              <NavigationLinkListItem
+                to={React.useContext(LocationContext) + "#contacts"}
+                className="justify-start px-1"
+                onClick={close}
+              >
+                Контакты
+              </NavigationLinkListItem>
             </ul>
           </Container>
         </DialogPanel>
@@ -94,18 +100,20 @@ const Navigation = () => {
       </button>
       <ul className="hidden items-center gap-4 md:flex">
         {menuLinks.map((menuLink, i) => (
-          <li key={i}>
-            <Link
-              to={`${menuLink.link}`}
-              className="grid h-lg place-items-center rounded-sm font-semibold
-                transition-colors hover:text-[--text-accent]
-                focus:text-[--text-accent]"
-              onClick={close}
-            >
-              <span className="place-self-center">{menuLink.name}</span>
-            </Link>
-          </li>
+          <NavigationLinkListItem
+            key={i}
+            to={menuLink.link}
+            className="place-items-center"
+          >
+            {menuLink.name}
+          </NavigationLinkListItem>
         ))}
+        <NavigationLinkListItem
+          to={React.useContext(LocationContext) + "#contacts"}
+          className="place-items-center"
+        >
+          Контакты
+        </NavigationLinkListItem>
       </ul>
     </nav>
   );

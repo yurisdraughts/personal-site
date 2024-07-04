@@ -1,7 +1,7 @@
 import * as React from "react";
 import Header from "./header/Header";
 import Main from "./Main";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 
 const Layout = ({ children }) => {
   return (

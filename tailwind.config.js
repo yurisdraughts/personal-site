@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const footerHeight = 788;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -44,10 +45,11 @@ module.exports = {
       spacing: {
         lg: defaultTheme.spacing[14],
         sm: defaultTheme.spacing[7],
+        footer: `min(100dvh, ${footerHeight}px)`,
       },
       borderRadius: {
-        "4xl": defaultTheme.spacing[10]
-      }
+        "4xl": defaultTheme.spacing[10],
+      },
     },
   },
   plugins: [require("tailwindcss-3d")],

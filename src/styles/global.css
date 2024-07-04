@@ -17,6 +17,7 @@
       "calt" 1;
 
     @apply bg-base-3 text-base text-base-00 md:text-lg dark:bg-base-03 dark:text-base-0;
+    @apply scroll-smooth;
   }
 
   ::selection {
@@ -34,6 +35,13 @@
 
   :focus-visible {
     @apply outline-none ring ring-blue;
+  }
+
+  input,
+  textarea {
+    @apply rounded-md bg-[--bg-accent] px-2;
+    @apply placeholder:text-[--text-secondary];
+    @apply focus:bg-[--bg-primary] focus:text-[--text-accent];
   }
 
   @supports (font-variation-settings: normal) {

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { LocationContextProvider } from "./src/utils/wrapPageElement";
 
 const applyDarkModeClass = /*js*/ `try {
     if (
@@ -31,3 +32,5 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
   ]);
 };
+
+export const wrapPageElement = LocationContextProvider;

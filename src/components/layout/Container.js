@@ -6,7 +6,7 @@ const Container = ({ className, ...props }) => {
     <div
       className={clsx(
         className,
-        "mx-auto w-11/12 lg:mx-auto xl:w-[theme(screens.lg)]",
+        "mx-auto w-11/12 sm:w-5/6 lg:mx-auto xl:w-[theme(screens.lg)]",
       )}
       {...props}
     />
