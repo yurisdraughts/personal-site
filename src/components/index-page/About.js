@@ -26,7 +26,7 @@ const About = () => {
             alt="Моя фотография на фоне леса"
             width={430}
             height={430}
-            className="rounded-2xl sm:rounded-3xl md:sticky
+            className="rounded-2xl sm:rounded-3xl md:!sticky
               md:top-[calc(theme(spacing.lg)+theme(spacing.sm))]"
           />
         </div>
