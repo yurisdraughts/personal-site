@@ -6,8 +6,12 @@ import Container from "../Container";
 import FormField from "./FormField";
 import ExternalLink from "../../links/ExternalLink";
 import Gradient from "../../text/Gradient";
+import EmailModal from "./EmailModal";
 
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isEmailSent, setIsEmailSent] = React.useState(false);
+
   const form = React.useRef();
 
   const sendEmail = (e) => {
@@ -24,10 +28,13 @@ const Footer = () => {
       )
       .then(
         () => {
-          console.log("SUCCESS!");
+          setIsEmailSent(true);
+          setIsModalOpen(true);
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          setIsEmailSent(false);
+          setIsModalOpen(true);
+          console.error("Письмо не было отправлено:", error.text);
         },
       );
   };
@@ -43,6 +50,13 @@ const Footer = () => {
         text-[--text-primary] supports-[scrollbar-width]:[scrollbar-width:none]
         supports-[selector(::-webkit-scrollbar)]:[&::-webkit-scrollbar]:hidden`}
     >
+      <EmailModal
+        onClose={() => {
+          setIsModalOpen(false);
+        }}
+        isOpen={isModalOpen}
+        isSent={isEmailSent}
+      />
       <div role="presentation" onFocus={scrollIntoView}>
         <Container
           className="max-w-xl rounded-4xl bg-[--bg-primary] p-sm"

@@ -17,7 +17,8 @@
       "calt" 1;
 
     @apply bg-base-3 text-base text-base-00 md:text-lg dark:bg-base-03 dark:text-base-0;
-    @apply scroll-smooth;
+    @apply scroll-smooth [scrollbar-gutter:stable];
+    @apply [scrollbar-color:var(--text-secondary)_var(--bg-primary)];
   }
 
   ::selection {
