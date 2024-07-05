@@ -13,6 +13,7 @@ module.exports = {
       { name: "Портфолио", link: "/portfolio" },
     ],
   },
+  pathPrefix: "/personal-site",
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
