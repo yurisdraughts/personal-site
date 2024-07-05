@@ -39,7 +39,6 @@ const About = () => {
             ),
             p: (props) => <p className="p" {...props} />,
             ul: (props) => <ul className="list" {...props} />,
-            a: ({ href, ...props }) => <Link to={href} {...props} />,
             strong: Highlight,
             theme: {
               icon: ({ icon: Icon, ...props }) => (
