@@ -11,6 +11,7 @@ const Navigation = () => {
   const {
     site: {
       siteMetadata: { menuLinks },
+      pathPrefix,
     },
   } = useStaticQuery(graphql`
     query MenuLinksQuery {
@@ -21,6 +22,7 @@ const Navigation = () => {
             name
           }
         }
+        pathPrefix
       }
     }
   `);
@@ -42,6 +44,9 @@ const Navigation = () => {
       }
     };
   }
+
+  const contactsPath =
+    React.useContext(LocationContext).replace(pathPrefix, "") + "#contacts";
 
   return (
     <nav className="flex">
@@ -79,7 +84,7 @@ const Navigation = () => {
                 </NavigationLinkListItem>
               ))}
               <NavigationLinkListItem
-                to={React.useContext(LocationContext) + "#contacts"}
+                to={contactsPath}
                 className="justify-start px-1"
                 onClick={close}
               >
@@ -109,7 +114,7 @@ const Navigation = () => {
           </NavigationLinkListItem>
         ))}
         <NavigationLinkListItem
-          to={React.useContext(LocationContext) + "#contacts"}
+          to={contactsPath}
           className="place-items-center"
         >
           Контакты
