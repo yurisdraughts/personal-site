@@ -78,15 +78,11 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: "true"
-          GATSBY_SERVICE_ID: ${{ secrets.GATSBY_SERVICE_ID }}
-          GATSBY_TEMPLATE_ID: ${{ secrets.GATSBY_TEMPLATE_ID }}
-          GATSBY_PUBLIC_KEY: ${{ secrets.GATSBY_PUBLIC_KEY }}
         run: |
           touch .env.production
-          echo "GATSBY_TEMPLATE_ID=$GATSBY_TEMPLATE_ID" >> .env.production
-          cat .env.production
-          echo "GATSBY_SERVICE_ID=$GATSBY_SERVICE_ID" >> .env.production
-          echo "GATSBY_PUBLIC_KEY=$GATSBY_PUBLIC_KEY" >> .env.production
+          echo "GATSBY_TEMPLATE_ID=${{ secrets.GATSBY_SERVICE_ID }}" >> .env.production
+          echo "GATSBY_SERVICE_ID=${{ secrets.GATSBY_TEMPLATE_ID }}" >> .env.production
+          echo "GATSBY_PUBLIC_KEY=${{ secrets.GATSBY_PUBLIC_KEY }}" >> .env.production
           ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
