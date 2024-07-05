@@ -78,10 +78,11 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
-          GATSBY_PUBLIC_KEY: ${{ secrets.GATSBY_PUBLIC_KEY }}
-          GATSBY_SERVICE_ID: ${{ secrets.GATSBY_SERVICE_ID }}
-          GATSBY_TEMPLATE_ID: ${{ secrets.GATSBY_TEMPLATE_ID }}
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        run: |
+          export GATSBY_PUBLIC_KEY=${{ secrets.GATSBY_PUBLIC_KEY }}
+          export GATSBY_SERVICE_ID=${{ secrets.GATSBY_SERVICE_ID }}
+          export GATSBY_TEMPLATE_ID=${{ secrets.GATSBY_TEMPLATE_ID }}
+          ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
